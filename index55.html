@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</head>
+<body>
+   
+
+
+<div id="app">
+  <h1>Semester 01- Result sheet</h1>
+  <table>
+    <tr>
+      <th>EE13346:</th>
+      <td><input type="number" v-model.number="marks.EE13346"></td>
+    </tr>
+    <tr>
+      <th>EE13262:</th>
+      <td><input type="number" v-model.number="marks.EE13262"></td>
+    </tr>
+    <tr>
+      <th>EE13266:</th>
+      <td><input type="number" v-model.number="marks.EE13266"></td>
+    </tr>
+    <tr>
+      <th>AGM3203:</th>
+      <td><input type="number" v-model.number="marks.AGM3203"></td>
+    </tr>
+    <tr>
+      <th>MHZ3459:</th>
+      <td><input type="number" v-model.number="marks.MHZ3459"></td>
+    </tr>
+  </table>
+  <p>Total: {{ total }}, Average: {{ average }}</p>
+</div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20%;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    width: 50%;
+    margin-left: 20%;
+    padding: 6px 40px;
+    border-radius: 3px;
+    background-color: aquamarine;
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table td {
+    padding: 8px;
+    
+   
+    
+}
+
+table th {
+    display: grid;
+    
+    width: 100%;
+    margin-left: 2%;
+    padding: 10px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: rgba(0, 109, 73, 0.438);
+}
+
+
+input[type="number"] {
+    width: 50%;
+    margin-left: 20%;
+    padding: 6px 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    border-radius: 3px;
+    padding: 5px 30px;
+    background-color: aqua;
+    width: 50%;
+    margin-left: 20%;
+
+    
+
+}
+
+.total-average {
+    font-weight: bold;
+}
+
+</style>
+
+<script>
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      marks: {
+        
+      }
+    }
+  },
+  computed: {
+    total() {
+      return Object.values(this.marks).reduce((acc, cur) => acc + cur, 0);
+    },
+    average() {
+      return this.total / Object.keys(this.marks).length;
+    }
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

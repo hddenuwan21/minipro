@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+</head>
+<body>
+    <div class="froms">
+        <h1><i class="fa-solid fa-clipboard"></i> Admission Form <i class="fa-solid fa-clipboard"></i></h1>
+        <form>
+            <div class="from">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="from">
+                <label for="father-name">Father's Name:</label>
+                <input type="text" id="father-name" name="father-name" required>
+            </div>
+            <div class="from">
+                <label for="address">Postal Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="from">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+            <div class="from">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="from">
+                <label for="program"> courses:</label>
+                <select id="program" name="program" required>
+                    <option value="" disabled selected>Select Program</option>
+                    <option value="Bachelor">Data Science</option>
+                    <option value="Master">Cybersecurity</option>
+                    <option value="PhD">Software development</option>
+                    <option value="PhD">Web development</option>
+                </select>
+            </div>
+            <div class="from">
+                <label for="telephone">Telephone Number:</label>
+                <input type="tel" id="telephone" name="telephone" required>
+            </div>
+            <div class="from">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.froms {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #e4751b;
+    text-transform: uppercase;
+}
+
+.from {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #3c3c3c;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ebebeb;
+    
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e4751b;
+}
+
+
+    
+</style>
+</html>

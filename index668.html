@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</head>
+<body>
+   
+
+
+<div id="app">
+    <h1 class="anime">HTML INPUT TYPE</h1>
+  <table>
+    <tr>
+      <th>button</th>
+      <td><input class="a" type="button"></td>
+    </tr>
+    <tr>
+        <th>number</th>
+        <td><input class="a" type="number"></td>
+      </tr>
+    <tr>
+      <th>cheackbox</th>
+      <td><input class="a" type="checkbox"></td>
+    </tr>
+    <tr>
+        <th>color</th>
+        <td><input class="a" type="color" id="colorInput"></td>
+      </tr>
+    <tr>
+      <th>date</th>
+      <td><input class="a" type="date"></td>
+    </tr>
+    <tr>
+      <th>month</th>
+      <td><input class="a" type="month"></td>
+    </tr>
+    <tr>
+        <th>time</th>
+        <td><input class="a" type="time"></td>
+      </tr>
+      <tr>
+        <th>radio</th>
+        <td><input class="a" type="radio"></td>
+      </tr>
+      <tr>
+        <th>url</th>
+        <td><input class="a" type="url"></td>
+      </tr>
+      <tr>
+        <th>file</th>
+        <td><input class="a" type="file"></td>
+      </tr>
+      <tr>
+        <th>pasword</th>
+        <td><input class="a" type="password"></td>
+      </tr>
+      <tr>
+        <th>range</th>
+        <td><input class="a" type="range"></td>
+      </tr>
+      <tr>
+        <th>Search</th>
+        <td><input class="a" type="search"></td>
+      </tr>
+      <tr>
+        <th>submit</th>
+        <td><input class="a" type="submit"></td>
+      </tr>
+      <tr>
+        <th>text</th>
+        <td><input class="a" type="text"></td>
+      </tr>
+     
+      <tr>
+        <th>reset</th>
+        <td><input class="a" type="reset"></td>
+      </tr>
+  </table>
+ 
+</div>
+
+<style>
+
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(180, 171, 171, 0.1);
+  backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255); 
+}
+
+
+
+@keyframes colorChange {
+  0% { color: rgb(102, 60, 170); }
+  25% { color: rgb(0, 255, 0); }
+  50% { color: rgb(255, 255, 255); }
+  75% { color: orange; }
+  100% { color: rgb(253, 253, 253); }
+}
+
+
+.anime {
+  animation: colorChange 3s infinite;
+}
+
+
+body {
+font-family: 'Arial', sans-serif;
+  background-image: url('44.jpg'); 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+h1 {
+  font-size: 1.5rem;
+   
+    width: 40%;
+    margin-left: 25%;
+    padding: 10px 30px ;
+    border-radius: 10px;
+    background-color: rgb(24, 132, 255);
+    color: #fff;
+}
+
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+
+tr:hover{
+background-color: rgb(156, 125, 243);
+border-radius: 20px;
+transform: scale(1.15);
+transition: 0.5s;
+
+
+}
+
+th {
+    text-align: left;
+  padding: 1px;
+  text-align: center;
+  
+  text-transform: uppercase;
+}
+
+
+td {
+  padding: 10px;
+}
+
+
+table .a{
+ padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+  
+}
+
+
+input[type="submit"].a {
+  background-color: #e47d08;
+  color: white;
+  
+}
+input[type="reset"].a {
+  background-color: #e47d08;
+  color: white;
+}
+input[type="button"].a {
+    background-color: #e47d08;
+    color: white;
+}
+
+input[type="reset"].a:hover{
+background-color: #3c0fa5;
+  
+  
+}
+
+input[type="submit"].a:hover {
+    background-color: #3c0fa5;
+}
+
+
+
+input[type="button"].a:hover {
+    background-color: #3c0fa5;
+}
+
+
+input[type="color"].a {
+     width: 80px;
+     height: 40px;
+ 
+
+}
+
+input[type="file"].a {
+  padding: 8px; 
+  width: 200px; 
+  border: 2px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #e47d08;
+  color: #fdfdfd; 
+  
+}
+
+
+input[type="file"].a:hover {
+    background-color: #3c0fa5;
+}
+
+
+
+
+
+
+</style>
+
+<script>
+
+// Ensure the animation is always active
+document.addEventListener('DOMContentLoaded', function() {
+  const h1Element = document.querySelector('#app h1');
+  h1Element.classList.add('animated-font');
+});
+
+
+
+</script>
+
+</body>
+
+</html>

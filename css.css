@@ -1,0 +1,145 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 5%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    width: 40%;
+    margin-left: 20%;
+    padding: 5px 40px;
+    border-radius: 10px;
+    background-color: rgb(233, 132, 0);
+}
+
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    cursor: pointer;
+    padding: 8px 40px;
+    background-color: #636663;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    margin-bottom: 10px;
+    transition: background-color 0.5s ease, padding 0.3s ease;
+    
+}
+
+.buttons button:hover {
+    background-color: #ffae00;
+    padding: 10px 50px;
+}
+.buttons button.active {
+    background-color: rgb(233, 132, 0);
+    color: white;
+}
+
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+
+.box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(233, 132, 0);
+    margin: 5px; 
+    border-radius: 4px;
+    transition: transform .5s ease; 
+    transform-origin: center;
+}
+
+
+.cell:hover {
+    transform: rotate(360deg);
+}
+
+.cell i {
+            font-size: 38px; 
+        }
+.animate-out {
+    opacity: 0;
+}
+
+
+
+
+
+
+.container1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.card-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.cell {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(233, 132, 0);
+    margin: 5px; 
+    border-radius: 4px;
+    transition: transform .5s ease; 
+    transform-origin: center;
+}
+
+
+
+.box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(233, 132, 0);
+    margin: 5px; 
+    border-radius: 4px;
+    transition: transform .5s ease; 
+    transform-origin: center;
+}
+
+
+.box:hover {
+    transform: rotate(360deg);
+}
+
+
+   .box i {
+            font-size: 38px; 
+        }
+.animate-out {
+    opacity: 0;
+}

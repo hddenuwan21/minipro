@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+
+
+
+
+    <div class="container1" id="app">
+        <h1>CSS image filter</h1>
+        <p>filter:</p>
+        <div class="container">
+            <div class="buttons">
+                <button id="normal">Normal</button>
+                <button id="startBtn">blur(5px)</button>
+                <button id="endBtn">contrast(200%)</button>
+                <button id="centerBtn">grayscale(100%)</button>
+                <button id="spaceBetweenBtn">hue-rotate</button>
+                <button id="spaceAroundBtn">sepia(80)</button>
+                <button id="spaceEvenlyBtn">saturate(200%)</button>
+                <button id="bright">brightness(200%)</button>
+                <button id="invert">invert(1)</button>
+            </div>
+            <div class="cimg" id="imge">
+                <img src="77.jpg" alt="im">
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+<style>
+
+
+
+
+
+body {
+font-family: 'Arial', sans-serif;
+  background-image: url('44.jpg'); 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#app {
+    max-width: 600px;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(180, 171, 171, 0.1);
+  backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255); 
+}
+
+h1 {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    width: 40%;
+    margin-left: 20%;
+    padding: 5px 40px;
+    border-radius: 10px;
+    background-color: rgb(233, 132, 0);
+}
+
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    cursor: pointer;
+    padding: 8px 30px;
+    background-color: #636663;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    transition: background-color 0.5s ease, padding 0.3s ease;
+
+    margin-right: 10px;
+
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.buttons button:hover {
+    background-color: #ffae00;
+    transform: scale(1.2);
+}
+.buttons button.active {
+    background-color: rgb(233, 132, 0);
+    color: white;
+}
+
+
+
+
+
+
+.container1 {
+    text-align: center;
+}
+
+
+
+.cimg {
+    margin-top: 20px;
+}
+
+.cimg img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+
+}
+
+.cimg img:hover {
+    filter: brightness(120%);
+}
+
+
+
+
+
+</style>
+
+
+<script>
+
+
+
+
+
+
+
+
+const buttons = document.querySelectorAll('.buttons button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+       
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+      
+        button.classList.add('active');
+
+     
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var bright = document.getElementById('bright');
+    var invert = document.getElementById('invert');
+    var normal = document.getElementById('normal');
+    var startBtn = document.getElementById('startBtn');
+    var endBtn = document.getElementById('endBtn');
+    var centerBtn = document.getElementById('centerBtn');
+    var spaceBetweenBtn = document.getElementById('spaceBetweenBtn');
+    var spaceAroundBtn = document.getElementById('spaceAroundBtn');
+    var spaceEvenlyBtn = document.getElementById('spaceEvenlyBtn');
+    var image = document.getElementById('imge').querySelector('img');
+
+  
+    normal.addEventListener('click', function () {
+        image.style.filter = 'blur(0px)';
+    });
+
+    startBtn.addEventListener('click', function () {
+        image.style.filter = 'blur(5px)';
+    });
+
+    endBtn.addEventListener('click', function () {
+        image.style.filter = 'contrast(200%)';
+    });
+
+    centerBtn.addEventListener('click', function () {
+        image.style.filter = 'grayscale(100%)';
+    });
+
+    spaceBetweenBtn.addEventListener('click', function () {
+        image.style.filter = 'hue-rotate(10deg)';
+    });
+
+    spaceAroundBtn.addEventListener('click', function () {
+        image.style.filter = 'sepia(80%)';
+    });
+
+    spaceEvenlyBtn.addEventListener('click', function () {
+        image.style.filter = 'saturate(200%)';
+    });
+    bright.addEventListener('click', function () {
+        image.style.filter = 'brightness(200%)';
+    });
+    invert.addEventListener('click', function () {
+        image.style.filter = 'invert(1)';
+    });
+});
+
+  
+  
+    </script>
+    
+
+
+
+
+
+</body>
+</html>

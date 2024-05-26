@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Sum of Even Numbers Calculator</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Sum of Even Numbers Calculator</h1>
+        <label for="numberInput">Enter a positive integer:</label>
+        <input type="number" id="numberInput">
+        <button onclick="calculateSum()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+</style>
+
+
+
+    <script>
+
+
+
+function calculateSum() {
+    var numberInput = document.getElementById('numberInput').value;
+    var sum = 0;
+    for (var i = 2; i <= numberInput; i += 2) {
+        sum += i;
+    }
+    document.getElementById('result').textContent = "The sum of even numbers from 1 to " + numberInput + " is: " + sum;
+}
+
+
+
+    </script>
+</body>
+</html>

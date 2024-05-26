@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Timing Function</title>
+    <!-- Load FontAwesome via CDN for the car icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+       
+</head>
+<body>
+  <div class="card-slider">
+    <div class="card">
+        <h1>CSS transform</h1>
+        <table>
+            <tr>
+                <th><img class="code-img" src="1.png" alt=""></th>
+                <td>
+                    <div class="box scale"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="2.png" alt=""></th>
+                <td>
+                    <div class="box scale2"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="3.png" alt=""></th>
+                <td>
+                    <div class="box scaleX"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="4.png" alt=""></th>
+                <td>
+                    <div class="box scaleX2"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="5.png" alt=""></th>
+                <td>
+                    <div class="box scaleY"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="6.png" alt=""></th>
+                <td>
+                    <div class="box scaleY2"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="7.png" alt=""></th>
+                <td>
+                    <div class="box rotate"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="8.png" alt=""></th>
+                <td>
+                    <div class="box skewX"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="9.png" alt=""></th>
+                <td>
+                    <div class="box skewX2"></div>
+                </td>
+            </tr>
+            
+            <tr>
+                <th><img class="code-img" src="10.png" alt=""></th>
+                <td>
+                    <div class="box skew"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="11.png" alt=""></th>
+                <td>
+                    <div class="box transalate"></div>
+                </td>
+            </tr>
+            <tr>
+                <th><img class="code-img" src="12.png" alt=""></th>
+                <td>
+                    <div class="box matrix"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+<style>
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 22px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(180, 171, 171, 0.1);
+  backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255); 
+}
+
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    width: 30%;
+    margin-left: 30%;
+    padding: 10px 30px ;
+    border-radius: 10px;
+    background-color: rgb(24, 132, 255);
+    color: #fff;
+}
+
+
+body {
+font-family: 'Arial', sans-serif;
+  background-image: url('44.jpg'); 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 22px;
+}
+
+
+
+td {
+    display: flex;
+    align-items: center;
+}
+
+.code-img {
+    width:250px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px;
+    
+}
+
+
+
+.box {
+    width: 80px;
+    height: 80px;
+   border-radius: 5px;
+    background-color: rgb(255, 136, 0);
+   
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.box:hover 
+{transform: scale(1.2);}
+
+.box.scale2:hover 
+
+{transform: scale(0.8);}
+
+.box.scaleX:hover 
+
+{transform: scaleX(0.6);}
+
+.box.scaleX2:hover 
+
+{ transform: scaleX(1.6);}
+
+.box.scaleY:hover 
+
+{transform: scaleY(0.6);}
+
+.box.scaleY2:hover 
+
+{transform: scaleY(1.6);}
+
+.box.rotate:hover 
+
+{transform: rotate(180deg);}
+
+.box.skewX:hover 
+
+{transform: skewX(25deg);}
+
+.box.skewX2:hover 
+
+{transform: skewX(-25deg);}
+
+
+.box.skew:hover 
+
+{transform: skew(50deg ,10deg);}
+
+.box.transalate:hover
+
+{transform: translate(5px,12px);}
+
+.box.matrix:hover 
+
+{transform: matrix(0.7, -0.5,0.5,0.4,0.5,0.7);}
+</style>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

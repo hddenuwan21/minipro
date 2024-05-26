@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+
+ 
+
+
+
+    <div class="container1" id="app">
+        <h1> <i class="fa-brands fa-css3-alt"></i> CSS Display Visualizer</h1>
+        <div class="container">
+            <div class="buttons">
+                <button id="inlineBtn">Inline</button>
+                <button id="flexBtn">Flex</button>
+                <button id="inlineBoxBtn">Inline-Block</button>
+                <button id="gridBtn">Grid</button>
+                <button id="blockBtn">Block</button>
+            </div>
+            <div id="cardContainer"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+
+<style>
+
+body {
+font-family: 'Arial', sans-serif;
+  background-image: url('44.jpg'); 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+#app {
+    max-width: 600px;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(180, 171, 171, 0.1);
+  backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255); 
+}
+
+h1 {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    width: 40%;
+    margin-left: 20%;
+    padding: 5px 40px;
+    border-radius: 10px;
+    background-color: rgb(233, 132, 0);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    cursor: pointer;
+    padding: 8px 40px;
+    background-color: #636663;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    margin-bottom: 10px;
+    transition: background-color 0.5s ease, padding 0.3s ease;
+    
+}
+
+.buttons button:hover {
+    background-color: #ffae00;
+    padding: 10px 50px;
+}
+.buttons button.active {
+    background-color: rgb(233, 132, 0);
+    color: white;
+}
+
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+
+.box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(233, 132, 0);
+    margin: 5px; 
+    border-radius: 4px;
+    transition: transform .5s ease; 
+    transform-origin: center;
+}
+
+
+.box:hover {
+    transform: rotate(360deg);
+}
+
+
+   .box i {
+            font-size: 38px; 
+        }
+.animate-out {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+<script>
+
+
+
+const buttons = document.querySelectorAll('.buttons button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+       
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+      
+        button.classList.add('active');
+
+     
+    });
+});
+
+
+
+
+
+
+        const inlineBtn = document.getElementById('inlineBtn');
+        const flexBtn = document.getElementById('flexBtn');
+        const gridBtn = document.getElementById('gridBtn');
+        const inlineBoxBtn = document.getElementById('inlineBoxBtn');
+        const blockBtn = document.getElementById('blockBtn');
+        const cardContainer = document.getElementById('cardContainer');
+
+        inlineBtn.addEventListener('click', () => changeDisplay('inline'));
+        flexBtn.addEventListener('click', () => changeDisplay('flex'));
+        gridBtn.addEventListener('click', () => changeDisplay('grid'));
+        inlineBoxBtn.addEventListener('click', () => changeDisplay('inline-block'));
+        blockBtn.addEventListener('click', () => changeDisplay('block'));
+
+        function createBoxes(numberOfBoxes, displayType) {
+            cardContainer.innerHTML = '';
+            for (let i = 1; i <= numberOfBoxes; i++) {
+                const box = document.createElement('div');
+                box.className = 'box';
+                const icon = document.createElement('i');
+                icon.classList.add('fas');
+                switch(i) {
+                    case 1:
+                        icon.classList.add('fa-face-grin-tongue-wink');
+                        break;
+                    case 2:
+                        icon.classList.add('fa-face-grin-squint-tears');
+                        break;
+                    case 3:
+                        icon.classList.add('fa-face-laugh-wink');
+                        break;
+                    case 4:
+                        icon.classList.add('fa-face-grin-tongue');
+                        break;
+                    case 5:
+                        icon.classList.add('fa-face-angry');
+                        break;
+                    case 6:
+                        icon.classList.add('fa-face-meh');
+                        break;
+                    case 7:
+                        icon.classList.add('fa-face-kiss');
+                        break;
+                    default:
+                        icon.classList.add('fa-question');
+                }
+                box.appendChild(icon);
+                cardContainer.appendChild(box);
+            }
+            cardContainer.style.display = displayType;
+        }
+
+        function changeDisplay(displayType) {
+            if (displayType === 'grid') {
+                cardContainer.style.display = 'grid';
+                cardContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                return;
+            }
+
+            if (displayType === 'block') {
+                cardContainer.style.display = 'block';
+                return;
+            }
+
+            createBoxes(7, displayType); // Changed to create 7 boxes with icons
+        }
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

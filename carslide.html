@@ -1,0 +1,359 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title>Responsive Card Slider</title>-->
+    <!-- Swiper JS -->
+	<script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+      <!--Uncomment this line-->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
+
+
+
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
+
+      
+      
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+                                        
+    </head>
+    <body>
+		<div class="slide-container swiper">
+			<div class="slide-content">
+				<div class="card-wrapper swiper-wrapper">
+					<div class="card swiper-slide selected">
+						<div class="round" >
+							<img src="pngfind.com-toyota-logo-png-transparent-4519878.png" class="logo">
+						</div>
+						<div class="content">
+							<h1>SUPRA MK4</h1>
+							<p>Hello, this car is Supra MK4</p>
+							<a href="#">Explore</a>
+						</div>
+						<img src="oie_Sv87L8XDoJZD.png" class="p_img">
+					</div>
+					<div class="card swiper-slide">
+						<div class="round" >
+							<img src="kisspng-nissan-skyline-gt-r-nissan-gt-r-car-nissan-bluebir-r-5ac17c2ca3b1b9.7186093115226296766705.png" class="logo">
+						</div>
+						<div class="content">
+							<h1>GTR R34</h1>
+							<p>Hello, this car is Supra MK4</p>
+							<a href="#">Explore</a>
+						</div>
+						<img src="pngfind.com-gtr-png-1992132.png" class="p_img">
+					</div>
+                    <div class="card swiper-slide">
+						<div class="round" >
+							<img src="kisspng-bmw-m5-car-portable-network-graphics-logo-5c029b8f815ce8.1286573515436747675299.png" class="logo">
+						</div>
+						<div class="content">
+							<h1>BMW M2</h1>
+							<p>Hello, this car is Supra MK4</p>
+							<a href="#">Explore</a>
+						</div>
+						<img src="pngwing.com (80).png" class="p_img">
+					</div>
+                    <div class="card swiper-slide">
+						<div class="round">
+							<img src="kisspng-lamborghini-urus-car-audi-logo-printed-vinyl-lamborghini-logo-stickers-factory-5b67800b0a6543.9939142815335096430426.png" class="logo">
+						</div>
+						<div class="content">
+							<h1>LAMBORGINI</h1>
+							<p>Hello, this car is Supra MK4</p>
+							<a href="#">Explore</a>
+						</div>
+						<img src="kisspng-lamborghini-centenario-geneva-motor-show-car-lambo-black-lamborghini-centenario-lp-770-4-car-5a734af67c5248.9108017715175052705092.png" class="p_img">
+					</div>
+                   
+				</div>
+                <div class="color-picker">
+                    <input class="a" type="color" id="colorInput">
+                    <button id="colorChangeButton">Change Color</button>
+                  </div>
+                  
+                
+			</div>
+		</div>
+		
+        
+  
+   
+		
+<style>
+
+
+
+
+:root {
+  --main-color: #f40103; 
+}
+
+
+.round {
+  --clr: var(--main-color);
+
+}
+
+
+.color-picker {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+#colorChangeButton {
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#colorChangeButton:hover {
+  background-color: #23527c;
+}
+
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(19, 18, 18);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slide-container {
+  
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-content {
+   
+    justify-content: center; 
+    transition: transform 0.5s ease;
+	margin-top: 300px;
+	
+   
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: grid;
+    justify-content: center;
+    transition: 0.5s;
+    border-radius: 20px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    width: 600px;
+    transition-delay: 0.5s;
+    z-index: 9999;
+}
+
+
+.card .round {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+   
+    border: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    position: relative;
+  width:370px;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;
+   
+  
+}
+
+.card .round::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #191919;
+    border: 8px solid var(--clr);
+    filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+}
+
+.card:hover .round::before {
+    transition-delay: 0.5s;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+}
+
+.card .round .logo {
+    position: relative;
+    height: auto;
+    width: 200px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+   
+}
+
+.card:hover .round .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.card .p_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .p_img {
+    transition-delay: 0.75s;
+    top: 90%;
+    left: 70%;
+    height: 180px;
+    transform: translate(-50%, -50%) scale(1) rotate(10deg);
+}
+
+.card .content {
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.card:hover .content {
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 60px;
+}
+
+.card .content h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 2rem;
+}
+
+.card .content p {
+    color: white;
+}
+
+.card .content a {
+    position: relative;
+    color: #111;
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<script>
+
+
+document.getElementById('colorInput').addEventListener('input', function() {
+  document.documentElement.style.setProperty('--main-color', this.value);
+});
+
+
+var swiper = new Swiper(".slide-content", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints:{
+        0: {
+            slidesPerView: 1,
+        },
+        520: {
+            slidesPerView: 2,
+        },
+        950: {
+            slidesPerView: 3,
+        },
+    },
+  });
+
+
+
+	
+</script>
+
+
+
+
+    </body>
+
+
+
+
+
+
+</html>

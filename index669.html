@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+  
+        
+        <div class="card" id="resize-card">
+            <h1 class="anime">
+                responsive WEB structure <i class="fa-brands fa-slack"></i>
+            </h1>
+            <div class="layer">
+                <header>Header</header>
+                <aside>sidebar</aside>
+                <main>main</main>
+                <section>section</section>
+                <div class="content">content</div>
+                <footer>footer</footer>
+            </div>
+        </div>
+
+    
+    <style>
+    
+
+    body {
+   font-family: 'Arial', sans-serif;
+  background-image: url('44.jpg'); 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+    h1 {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    width: 30%;
+    margin-left: 30%;
+    padding: 10px 30px ;
+    border-radius: 10px;
+    background-color: rgb(24, 132, 255);
+    color: #fff;
+}
+
+@keyframes colorChange {
+  0% { color: rgb(131, 25, 184); }
+  25% { color: rgb(255, 255, 255); }
+  50% { color: rgb(226, 123, 5); }
+  75% { color: rgb(70, 232, 11); }
+  100% { color: rgb(253, 253, 253); }
+}
+
+
+.anime {
+  animation: colorChange 3s infinite;
+}
+
+
+
+
+    .card {
+    display: block;
+    
+
+    max-width: 1200px;
+    
+    border-radius: 15px;
+    overflow: hidden;
+    
+    resize: horizontal; 
+    cursor: ew-resize;
+
+
+  margin: 0 auto;
+  margin-top: 5%;
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  background-color: rgba(180, 171, 171, 0.1);
+  backdrop-filter: blur(10px);
+
+}
+
+.layer {
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 100px 400px 100px 80px; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "sidebar section content"
+        "footer footer footer";
+    padding: 40px;
+    border-radius: 10px;
+}
+
+header:hover, aside:hover, main:hover, section:hover, .content:hover, footer:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+
+
+
+
+
+}
+header, aside, main, section, .content, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+header {
+    grid-area: header;
+    background-color: #d77308;
+    color: #fff;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: #1763c7;
+}
+
+main {
+    grid-area: main;
+    background-color: #c60000;
+}
+
+section {
+    grid-area: section;
+    background-color: #00ddff;
+}
+
+.content {
+    grid-area: content;
+    background-color: #00b706;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #ab00e9;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .layer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 90px 350px 100px 80px; 
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "sidebar main"
+            "section content"
+            "content content"
+            "footer footer";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .layer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 70px 200px 60px 70px 80px; 
+        grid-template-areas:
+            "header "
+            "sidebar "
+            "main "
+            "section "
+            "content "
+            "footer ";
+    }
+}
+
+
+
+
+
+
+
+    
+    </style>
+    
+
+</body>
+</html>

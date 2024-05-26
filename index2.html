@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>App</title>
+
+</head>
+<body>
+
+<div id="click">
+    <btn></btn>
+</div>
+
+
+
+<style>
+  
+    #click {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    
+    
+    #click button {
+        color: rgb(255, 255, 255);
+        background-color: blue;
+        padding: 10px 20px; 
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #click p {
+        margin-top: 50px; 
+        font-size: 2rem; 
+        color: #ff0000;
+    }
+</style>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+
+    Vue.component('btn', {
+        data() {
+            return {
+                show: false
+            };
+        },
+        methods: {
+            toggl() {
+                this.show = !this.show;
+            }
+        },
+        template: `
+        <div>
+            <button @click="toggl">Toggle Greeting</button>
+            <p v-if="show">Hello, Vue.js!</p>
+        </div>
+        `
+    });
+
+    new Vue({
+        el: '#click'
+    });
+
+</script> 
+
+</body>
+</html>
